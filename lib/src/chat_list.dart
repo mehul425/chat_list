@@ -402,7 +402,7 @@ class ChatListState extends State<ChatList> {
         duration: const Duration(milliseconds: 200), curve: Curves.bounceInOut);
   }
 
-  _scrollToLatestReadMessage() async {
+  scrollToLatestReadMessage() async {
     bool clearData = false;
     if (latestUnreadMessageIndex != null) {
       if (constLargeUnreadIndex != latestUnreadMessageIndex) {
@@ -510,7 +510,7 @@ class ChatListState extends State<ChatList> {
         builder: (context, bool showButton, child) {
           if (widget.showUnreadMsgButton && showButton) {
             return GestureDetector(
-              onTap: _scrollToLatestReadMessage,
+              onTap: scrollToLatestReadMessage,
               child: widget.unreadMsgButtonBuilder != null
                   ? widget.unreadMsgButtonBuilder!(
                       context, widget.unreadMsgCount)
